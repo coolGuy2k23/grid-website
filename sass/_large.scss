@@ -1,5 +1,9 @@
 @media (min-width: 992px) {
 	.header {
+		h1.company-name {
+			font-size: 6rem;
+		}
+
 		grid-template-rows: auto repeat(2, 1fr);
 
 		&__text {
@@ -53,25 +57,49 @@
 			left: 35%;
 			width: 5%;
 			animation: rotate-left 55s linear infinite;
-
 		}
 	}
 
-    .nav{
-        grid-column: 1/2;
-        grid-row: 1/2;
+	.nav {
+		grid-column: 1/2;
+		grid-row: 1/2;
 
-        &-desktop{
-            display: block;
-            border-bottom: 1px solid rgba(255,255,255, .2);
-        }
+		&-desktop {
+			display: block;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+		}
 
-        &__link{
-            color: white;
-        }
+		&__link {
+			color: white;
 
-    }
-    .hamburger{
-        display: none;
-    }
+			&::before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				content: '';
+				width: 100%;
+				height: 100%;
+				border: 1px solid $gold;
+				opacity: 0;
+			}
+
+			&:hover::before {
+				animation: pulse 1s;
+			}
+		}
+	}
+	.hamburger {
+		display: none;
+	}
+}
+
+@media (min-width: 1200px) {
+
+	.header{
+		&__text{
+			p{
+				font-size: 2.2rem;
+			}
+		}
+	}
 }
